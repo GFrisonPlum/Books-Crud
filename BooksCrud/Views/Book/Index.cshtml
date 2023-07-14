@@ -1,0 +1,66 @@
+﻿@model IEnumerable<BooksCrud.Models.Book_table>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<p>
+    @Html.ActionLink("Create New", "Create", "", new {@class="btn btn-success"})
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.bookId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.author)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.image)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.date)
+        </th>
+        <th>Acciones</th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.bookId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.author)
+        </td>
+        <td>
+            <img src="@Url.Content("~/Images/" + item.image)" style="max-width: 100px;" />
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.date)
+        </td>
+        <td>
+            <a href="@Url.Action("Edit", new { id = item.bookId })" class="btn btn-warning btn-sm" title="Editar">
+                <i class="bi bi-pencil"></i>
+            </a>
+            |
+            <a href="@Url.Action("Details", new { id = item.bookId })" class="btn btn-primary btn-sm" title="Detalles">
+                <i class="bi bi-eye"></i>
+            </a>
+            |
+            <a href="@Url.Action("Delete", new { id = item.bookId })" class="btn btn-danger btn-sm" title="Eliminar">
+                <i class="bi bi-trash"></i>
+            </a>
+        </td>
+
+
+
+    </tr>
+}
+
+</table>

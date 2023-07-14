@@ -1,0 +1,21 @@
+﻿@model BooksCrud.Models.Book_table
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+
+<div class="card" style="width: 18rem;">
+    <img class="card-img-top" src="@Url.Content("~/Images/" + Model.image)" >
+    <div class="card-body">
+        <h5 class="card-title">@Html.DisplayFor(model => model.name)</h5>
+        <p class="card-text">@Html.DisplayFor(model => model.author)</p>
+        <p>
+            @Html.ActionLink("Edit", "Edit", new { id = Model.bookId }) |
+            @Html.ActionLink("Back to List", "Index")
+        </p>
+
+    </div>
+</div>

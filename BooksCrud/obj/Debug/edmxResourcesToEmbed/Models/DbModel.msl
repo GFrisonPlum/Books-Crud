@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="BooksCrudModelStoreContainer" CdmEntityContainer="DbModels">
+    <EntitySetMapping Name="Book_table">
+      <EntityTypeMapping TypeName="BooksCrudModel.Book_table">
+        <MappingFragment StoreEntitySet="Book_table">
+          <ScalarProperty Name="image" ColumnName="image" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="author" ColumnName="author" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="bookId" ColumnName="bookId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
